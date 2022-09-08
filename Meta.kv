@@ -1,0 +1,33 @@
+Interface:
+
+<Interface>:
+    orientation: "vertical"
+    MDToolbar:
+        title: "Meta App"
+        pos_hint:{"top":1}
+        anchor_title: "center"
+    ScreenManager:
+        id: sm
+        Screen:
+            name:"import"
+            Ibtn:
+                id: import_btn
+                icon: "Drag.png"
+                size_hint: None,None
+                size: dp(500),dp(500)
+                pos_hint:{"center_x":.5}
+                pos:1,dp(20)
+                on_press:root.button_press()
+        Screen:
+            name: "output"
+            MDBoxLayout:
+                id: tab_plc
+                md_bg_color: app.theme_cls.primary_color
+                center: self.parent.center
+                size_hint: .8,.8
+            Ibtn:
+                icon:"back.png"
+                size_hint:None,None
+                size: dp(48),dp(48)
+                pos: dp(10),dp(10)
+                on_press: root.back_btn()
